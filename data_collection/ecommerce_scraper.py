@@ -1,28 +1,49 @@
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
+import time
 
-BASE_URL = "https://books.toscrape.com/"
+API_URL = "https://www.googleapis.com/books/v1/volumes"
 
-response = requests.get(BASE_URL)
-soup = BeautifulSoup(response.text, "html.parser")
+QUERY = "subject:technology"
+MAX_RESULTS_PER_CALL = 40
+TOTAL_RESULTS_TARGET = 1000   # you can increase safely
 
 books = []
+start_index = 0
 
-for book in soup.select("article.product_pod"):
-    title = book.h3.a["title"]
-    price = book.select_one(".price_color").get_text(strip=True)
-    rating = book.select_one("p.star-rating")["class"][1]
+while len(books) < TOTAL_RESULTS_TARGET:
+    params = {
+        "q": QUERY,
+        "startIndex": start_index,
+        "maxResults": MAX_RESULTS_PER_CALL
+    }
 
-    books.append({
-        "title": title,
-        "price": price,
-        "rating": rating,
-        "category": "books",
-        "source": "books.toscrape"
-    })
+    response = requests.get(API_URL, params=params)
+    data = response.json()
+
+    items = data.get("items", [])
+    if not items:
+        break
+
+    for item in items:
+        volume = item.get("volumeInfo", {})
+
+        books.append({
+            "title": volume.get("title", ""),
+            "authors": ", ".join(volume.get("authors", [])),
+            "description": volume.get("description", ""),
+            "average_rating": volume.get("averageRating", ""),
+            "categories": ", ".join(volume.get("categories", [])),
+            "published_date": volume.get("publishedDate", ""),
+            "source": "google_books_api"
+        })
+
+    start_index += MAX_RESULTS_PER_CALL
+    print(f"Collected {len(books)} books so far...")
+
+    time.sleep(1)   # polite delay (important)
 
 df = pd.DataFrame(books)
 df.to_csv("data/raw/ecommerce_books.csv", index=False)
 
-print(f"Collected {len(df)} books from demo e-commerce site")
+print(f"Finished collecting {len(df)} books from Google Books API")

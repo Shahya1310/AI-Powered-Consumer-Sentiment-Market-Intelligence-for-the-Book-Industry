@@ -1,28 +1,52 @@
 import requests
 import pandas as pd
-import xml.etree.ElementTree as ET
+import time
 
-RSS_URL = "https://news.google.com/rss/search?q=ecommerce+business"
+API_KEY = "d851e72bb7c5472f96b610148face72a"
+BASE_URL = "https://newsapi.org/v2/everything"
 
-response = requests.get(RSS_URL)
-root = ET.fromstring(response.content)
+QUERY = "books OR publishing OR ebook OR reading OR book sales"
+PAGE_SIZE = 100
+TOTAL_ARTICLES_TARGET = 1000
 
 articles = []
+page = 1
 
-for item in root.findall(".//item")[:15]:   # take first 15 news items
-    title = item.find("title").text
-    link = item.find("link").text
-    pub_date = item.find("pubDate").text
+while len(articles) < TOTAL_ARTICLES_TARGET:
+    params = {
+        "q": QUERY,
+        "language": "en",
+        "pageSize": PAGE_SIZE,
+        "page": page,
+        "apiKey": API_KEY
+    }
 
-    articles.append({
-        "text": title,
-        "link": link,
-        "published": pub_date,
-        "category": "ecommerce_news",
-        "source": "google_news_rss"
-    })
+    response = requests.get(BASE_URL, params=params)
+    data = response.json()
+
+    if data.get("status") != "ok":
+        print("Error:", data)
+        break
+
+    fetched = data.get("articles", [])
+    if not fetched:
+        break
+
+    for item in fetched:
+        articles.append({
+            "title": item.get("title", ""),
+            "description": item.get("description", ""),
+            "content": item.get("content", ""),
+            "source": item.get("source", {}).get("name", ""),
+            "published_at": item.get("publishedAt", ""),
+            "category": "ecommerce_news"
+        })
+
+    print(f"Collected {len(articles)} news articles so far...")
+    page += 1
+    time.sleep(1)   # polite delay
 
 df = pd.DataFrame(articles)
 df.to_csv("data/raw/news_articles.csv", index=False)
 
-print(f"Collected {len(df)} news articles from Google News RSS")
+print(f"Finished collecting {len(df)} news articles")
