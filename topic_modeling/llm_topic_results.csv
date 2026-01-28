@@ -1,0 +1,533 @@
+batch_id,llm_output
+0,"Topic: Book Recommendations
+
+Keywords: 
+1. book
+2. recommendation
+3. reading
+4. self-help
+5. Amazon"
+1,"Topic: Book Recommendations and Reviews
+
+Keywords:
+1. Book
+2. Recommendation
+3. Review
+4. Reading
+5. Literature"
+2,"Topic: Book Recommendations and Personal Growth
+
+Keywords: 
+1. Atomic Habits
+2. Book Recommendations
+3. Personal Growth
+4. Self-Harm
+5. Personal Development"
+3,"Topic: Reading and Book Recommendations
+
+Keywords:
+- reading
+- books
+- genres
+- authors
+- recommendations"
+4,"Topic: Book Recommendations and Reviews
+Keywords:
+1. Books
+2. Recommendation
+3. Reviews
+4.Habits
+5. Reading"
+5,"Topic:
+Book recommendations and personal growth
+
+Keywords:
+books, self-help, recommendations, growth, self"
+6,"Topic: 
+Reading books and reading habits
+
+Keywords:
+1. Books
+2. Reading
+3. Philosophy
+4. Goals
+5. Stress"
+7,"Topic: Book Recommendations
+
+Keywords:
+1. Book
+2. Read
+3. Suggestion
+4. Reads
+5. Ideas"
+8,"Topic: 
+Books/Reading
+
+Keywords:
+1. reading
+2. book
+3. young
+4. life
+5. read"
+9,"Topic:
+The books and media consumed by the customer.
+
+Keywords:
+mahabharat, book, ramayan, television, character"
+10,"Topic: Mixed Book Reviews
+Keywords: 
+1. Wrath
+2. Unpopular
+3. Rage
+4. Powerless
+5. Wrath"
+11,"Topic:
+ Books/Literary Discussions
+
+Keywords:
+ Books, King, Love, Read, Summer"
+12,"Topic:
+Book series and opinions
+
+Keywords:
+series, book(s), opinion, summer, series"
+13,"Topic: Fiction Books
+
+Keywords:
+1. Fiction
+2. Books
+3. Realistic
+4. Spicy
+5. Innocent"
+14,"Topic: 
+Readers sharing opinions about books or pop culture, specifically discussing fanfiction and celebrity-related content.
+
+Keywords:
+books, fanfiction, kate stewart, tiaras, nicknames"
+15,"Topic: 
+ Disappointments with fantasy book series
+
+Keywords:
+1. series
+2. reading
+3. slump
+4. books
+5. King"
+16,"Topic: 
+The main topic discussed in all the given customer texts is 'books', specifically their opinions and experiences with a range of literary works.
+
+Keywords: 
+- Traumatized
+- Emotional
+- Rollercoaster
+- Inheritance
+- Boring"
+17,"Topic:
+Unpopular Book Opinions
+
+Keywords:
+unpopular, book, opinion, writing, style"
+18,"Topic:
+Reading and Books
+
+Keywords:
+Reading, Books, Romance, Plot, Spoilers"
+19,"Topic:
+Readers want to see book reviews and ratings from people, likely related to books in the fantasy genre such as Lynn Painter or Lynnette Noni's works.
+
+Keywords:
+1. review
+2. book
+3. Lynnette 
+4. Noni
+5. love"
+20,"Topic: Reading and Personal Preferences
+Keywords:
+1. Reading
+2. Books
+3. Hyperfixation
+4. Books
+5. Favorites 
+
+However the keywords should probably include other words like 'country book', 'broken book' and others. These were not extracted as the system only took the general topic and chose those 5 general keywords. 
+In that case the proper five important keywords are.
+Topic: Reading and Personal Preferences
+Keywords:
+1. Country
+2. Broken
+3. Hyperfixation
+4. Favorites
+5. Books"
+21,"Topic:
+Reading Books
+
+Keywords:
+1. books
+2. reading
+3. pace
+4. fearful
+5. books"
+22,"Topic: Book reviews and recommendations
+
+Keywords:
+1. Reviews
+2. Books
+3. Fiction
+4. Nonfiction
+5. Characters"
+23,"Topic:
+Books
+
+Keywords:
+1. Books
+2. Fantasy
+3. Percy
+4. Book
+5. Read"
+24,"Topic: Books and Reading 
+Keywords: books, piper lawson, powerless series, library, read"
+25,"Topic:
+Reading preferences and experiences
+
+Keywords:
+1. Books
+2. Reading
+3. Authors
+4. Series
+5. Preferences"
+26,"Topic: Reading Preferences and Recommendations
+Keywords:
+1. read
+2. young adult
+3. Christian
+4. books
+5. recommendations"
+27,"Topic:
+Recommendations for reading materials
+
+Keywords:
+1. Chronicles
+2. Manga
+3. Series
+4. Guide
+5. Novels"
+28,"Topic: Book Suggestions and Reviews
+Keywords:
+1. Book
+2. Series
+3. Read
+4. Review
+5. Recommendations"
+29,"Topic: Literary Works and Book Reviews
+
+Keywords: books, Tree Grows Brooklyn, Summer, Beach Read, Jesus"
+30,"Topic: Book and Romance Novels
+Keywords:
+1. romance
+2. books
+3. popular
+4. genre
+5. summer"
+31,"Topic: 
+Reviews of media content or TV shows
+
+Keywords:
+- library
+- people
+- loved"
+32,"Topic:
+Recommendations/Book Reviews
+
+Keywords:
+1. underrated
+2. series
+3. book
+4. recommendations
+5. loved"
+33,"Topic: 
+Books and Reading
+
+Keywords:
+ Books, Reading, Passion, Literature, Novels"
+34,"Topic: Book Reviews and Opinions
+Keywords:
+1. Book
+2. Reviews
+3. Opinions
+4. Read
+5. Recommend"
+35,"Topic: Book Reviews and Opinions
+
+Keywords:
+1. Overhyped
+2. Loved
+3. Books
+4. Reviews
+5. Opinions"
+36,"Topic:
+Boys/masculinity or a character/male figure
+
+Keywords:
+boys, loved, iconic, arrogant, personality"
+37,"Topic: 
+Book and Literature Review
+
+Keywords:
+1. Book
+2. Hyped
+3. Underrated
+4. Review
+5. Literature"
+38,"Topic:
+ Product review or discussion, possibly about a book or comic.
+
+Keywords:
+1. reviews
+2. black
+3. bottle
+4. man
+5. hyped"
+39,"Topic: 
+Controversies and Dislikes in Romance Books
+
+Keywords:
+1. Romance
+2. Books
+3. Hoover
+4. AgeGaps
+5. Controversial"
+40,"Topic: Criticism and Disgust of Romance Genres
+Keywords:
+1. Romance
+2. Sex
+3. Abuse
+4. Toxicity
+5. Harassment"
+41,"Topic: 
+Dislikes in Books with Taboo Subject Matter
+
+Keywords:
+1. Taboo
+2. Dislike
+3. Romance
+4. Kink
+5. Subtle"
+42,"Topic: Book or Literature Criticism
+Keywords:
+1. Books
+2. Romance
+3. Sexual
+4. Melodramatic
+5. Literature"
+43,"Topic:
+Literary Preferences and Social Commentary
+
+Keywords:
+1. Romance
+2. Books
+3. Plot
+4. Homosexual
+5. Sexism"
+44,"Topic: Discussion About Colleen Hoover or Literary Criticism
+Keywords:
+1. Colleen Hoover
+2. Intellectualism
+3. Criticism
+4. Author
+5. Books"
+45,"Topic:
+Sexual violence, abuse, and content targeting young adults
+
+Keywords: 
+1. violence
+2. abuse
+3. young
+4. adults
+5. haunting"
+46,"Topic: Banned Books and Cultural Sensitivity
+Keywords:
+1. banned
+2. books
+3. pedophilia
+4. civilized
+5. banned"
+47,"Topic:
+books and content
+
+Keywords:
+books, kink, shaming, love, rowling"
+48,"Topic:
+Literature and Reading Challenges
+
+Keywords:
+1. Literature
+2. Reading
+3. Challenge
+4. Recommendations
+5. Authors"
+49,"Topic: 
+Technology and Industry
+
+Keywords:
+1. Cybersecurity
+2. Video games
+3. Sales 
+4. Music
+5. Publishing"
+50,"Topic: 
+News and updates from various industries (technology, automotive, real estate, etc.)
+
+Keywords:
+1. Hybrid
+2. Electric Vehicle (EV)
+3. Real Estate
+4. Foldable
+5. Artificial Intelligence (AI)"
+51,"Topic:
+TikTok booktok related news/ Motorola's bookstyle foldable phone
+
+The other texts appear to discuss financial reports, news, or historical information.
+
+Keywords:
+1. TikTok
+2. Bookstyle
+3. Foldable
+4. Booktok
+5. Motorola"
+52,"Topic: Industry and Business News
+
+Keywords: 
+1. Bookstore
+2. Costco
+3. Photography
+4. Fortnite
+5. Business"
+53,"Topic:
+Cybersecurity and Sales Trends (main topic of sales and economy)
+
+Keywords:
+1. Sales
+2. Cybertrucks
+3. Elon Musk
+4. Video game
+5. Disaster preparedness"
+54,"Topic: General Trends and Topics in Various Sectors
+
+Keywords:
+1. Gen Z
+2. Trading cards
+3. Cannabis
+4. Manga
+5. Apple"
+55,"Topic: Electric Vehicles and Automotive Industry Trends
+
+Keywords:
+1. EV (Electric Vehicles)
+2. Automobile
+3. Sales
+4. Adoption
+5. Policy"
+56,"Topic: Business and Sales
+
+Keywords:
+1. Tesla
+2. AI
+3. Sales
+4. EVs, 
+5. Business"
+57,"Topic: Business News
+
+Keywords: 
+1. Sales
+2. EVs (Electric Vehicles)
+3. Automakers
+4. Companies (Paramount, WBD, Tesla)
+5. Patents (XReal, Vitures)"
+58,"Topic:
+1. Book Festival
+2. Earbuds
+3. Real Estate
+4. Portable Power Stations
+5. Military Drills
+
+Note: I chose one topic from each text, although there are some variations and overlapping topics.
+
+Keywords for each topic:
+1. Festival - 'Pune', 'Book', 'Sales', 'Festival', 'Response' 
+2. Earbuds - 'Bose', 'Earbuds', 'Noise', 'Holiday', 'Deals'
+3. Real Estate - 'Real', 'Estate', 'Sales', 'Increased', 'Graph'
+4. Portable Power Stations - 'Portable', 'Power', 'Stations', 'Accessories', 'Sale'
+5. Military Drills - 'Drills', 'Military', 'Action', 'Taiwan', 'China'"
+59,"Topic: Business and Technology News
+
+Keywords:
+1. Lottery
+2. Technology
+3. Stocks
+4. Apple
+5. AI"
+60,"Topic: 
+Economic and Business News
+
+Keywords:
+1. Economic
+2. Reports
+3. Tesla
+4. Ridehailing
+5. LinkedIn"
+61,"Topic: 
+Business News and Market Updates
+
+Keywords:
+1. Sales
+2. Earnings
+3. Stocks
+4. Vehicle
+5. Economy"
+62,"Topic: 
+News/Reports
+
+Keywords: 
+1. Automotive
+2. Artificial
+3. Intelligence
+4. TV
+5. Consent"
+63,"Topic: Holiday Shopping and Technology
+
+Keywords:
+Christmas, Technology, Deals, Shopping, Sales"
+64,"Topic:
+Automotive and Automotive Industry News
+
+Keywords:
+1. Sales
+2. Performance
+3. Electric
+4. Offroad
+5. Military"
+65,"Topic: Arms Sales and Industry News
+
+Keywords:
+1. Arms
+2. Sales
+3. Taiwan
+4. Industry
+5. Trump"
+66,"Topic: Business, Technology, and Economy News Articles with Grammar Issues
+
+Keywords:
+1. Sales
+2. Sanctions
+3. Mercedes
+4. Phones
+5. Stocks"
+67,"Topic:
+Electric Vehicle Market
+
+Keywords:
+auto 
+industry 
+electric 
+market 
+vehicle"

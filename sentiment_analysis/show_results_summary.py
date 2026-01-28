@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv(r'c:\Users\KIIT0001\Downloads\infosys\infosys\ai-consumer-sentiment-data-collection\data\processed\sentiment_analysis_results.csv')
+df = pd.read_csv("data/processed/sentiment_analysis_results_batch.csv")
 
 print('='*60)
 print('SENTIMENT ANALYSIS RESULTS SUMMARY')
@@ -30,5 +30,5 @@ for sentiment in ['positive', 'negative', 'neutral']:
 
 print('\n' + '='*60)
 print('Results file:')
-print('c:\\Users\\KIIT0001\\Downloads\\infosys\\infosys\\ai-consumer-sentiment-data-collection\\data\\processed\\sentiment_analysis_results.csv')
+print("data/processed/sentiment_analysis_results_batch.csv")
 print('='*60)

@@ -42,6 +42,9 @@ Keywords:
         "batch_id": idx,
         "llm_output": response.choices[0].message.content.strip()
     })
+    import time
+time.sleep(1.2)
+
 
 # Save LLM topic modeling results
 pd.DataFrame(results).to_csv("llm_topic_results.csv", index=False)

@@ -1,8 +1,9 @@
-# 📁 Project Organization - FINAL ✅
+# 📁 Project Organization — FINAL ✅
 
 ## ✨ Cleaned and Organized!
 
-All files are now in their proper locations. No more duplicates!
+All files are now in their proper locations with **data, scripts, and documentation clearly separated**.
+This structure follows standard ML project practices and is mentor‑review ready.
 
 ---
 
@@ -11,44 +12,43 @@ All files are now in their proper locations. No more duplicates!
 ```
 ai-consumer-sentiment-data-collection/
 │
-├── 📖 DOCUMENTATION (Root Level - Clean)
-│   ├── README.md                    # Main project guide
-│   ├── PROJECT_STRUCTURE.md        # Complete reference
-│   ├── RESULTS_GUIDE.md            # Quick start guide
-│   └── FILE_ORGANIZATION.md        # Organization guide (This file)
+├── 📖 DOCUMENTATION (Root Level)
+│   ├── README.md                    # Main project overview
+│   ├── PROJECT_STRUCTURE.md        # Technical pipeline reference
+│   ├── RESULTS_GUIDE.md            # How to view outputs
+│   └── FILE_ORGANIZATION.md        # Folder structure guide (this file)
 │
-├── ⚙️ CONFIGURATION (Root Level - Clean)
-│   ├── requirements.txt            # Dependencies
+├── ⚙️ CONFIGURATION (Root Level)
+│   ├── requirements.txt            # All dependencies
 │   ├── .env                        # API keys (GROQ_API_KEY)
-│   └── .env.example               # Template
+│   └── .env.example                # Environment template
 │
-├── 📊 SENTIMENT ANALYSIS (Organized Folder)
+├── 📊 SENTIMENT ANALYSIS
 │   └── sentiment_analysis/
-│       ├── sentiment_analysis.py           # Main script
-│       ├── sentiment_analysis_batch.py     # Batch processing
-│       ├── show_results_summary.py        # Statistics
-│       ├── test_groq_connection.py        # API test
-│       └── README.md                      # Documentation
+│       ├── sentiment_analysis.py           # LLM sentiment pipeline
+│       ├── sentiment_analysis_batch.py     # Batch Groq processing
+│       ├── show_results_summary.py         # Statistics summary
+│       ├── test_groq_connection.py         # API connectivity test
+│       └── README.md                       # Usage documentation
 │
-├── 📈 DATA (Organized)
-│   ├── data/
-│   │   ├── raw/                   # Original data sources
-│   │   │   ├── ecommerce_books.csv
-│   │   │   ├── news_articles.csv
-│   │   │   └── youtube_book_comments.csv
-│   │   │
-│   │   └── processed/             # Results & cleaned data
-│   │       ├── cleaned_text.csv   # Input
-│   │       └── sentiment_analysis_results.csv ⭐ RESULTS
-│   │
-│   ├── data_collection/           # Data collection scripts
-│   ├── data_preprocessing/        # Data cleaning scripts
-│   └── topic_modeling/            # Topic analysis scripts
+├── 📊 DATA
+│   └── data/
+│       ├── raw/                   # Original scraped data
+│       │   ├── ecommerce_books.csv
+│       │   ├── news_articles.csv
+│       │   └── youtube_book_comments.csv
+│       │
+│       └── processed/             # Cleaned & analyzed datasets
+│           ├── cleaned_text.csv
+│           ├── sentiment_analysis_results.csv ⭐
+│           └── topic_results.csv
 │
-└── 📊 ONLY ESSENTIAL AT ROOT
-    ├── requirements.txt
-    ├── topic_results.csv
-    └── .git/
+├── 🛠 PIPELINE MODULES
+│   ├── data_collection/           # Scraping & API scripts
+│   ├── data_preprocessing/        # Cleaning & normalization
+│   └── topic_modeling/            # LLM topic extraction scripts
+│
+└── 📁 .git/
 ```
 
 ---
@@ -56,14 +56,14 @@ ai-consumer-sentiment-data-collection/
 ## ✅ What Was Cleaned
 
 ### 🗑️ Removed Duplicates
-- ✅ `sentiment_analysis.py` (moved to sentiment_analysis/)
-- ✅ `sentiment_analysis_batch.py` (moved to sentiment_analysis/)
-- ✅ `show_results_summary.py` (moved to sentiment_analysis/)
-- ✅ `test_groq_connection.py` (moved to sentiment_analysis/)
-- ✅ `SENTIMENT_ANALYSIS_README.md` (replaced with sentiment_analysis/README.md)
-- ✅ `visualize_sentiment_results.py` (removed)
 
-### 📍 Root Directory Now (CLEAN)
+* All sentiment scripts consolidated into `sentiment_analysis/`
+* Old root‑level scripts removed
+* Visualization experiments removed
+* Topic outputs moved into `data/processed/`
+
+### 📍 Root Directory Now
+
 ```
 ai-consumer-sentiment-data-collection/
 ├── .env
@@ -72,41 +72,46 @@ ai-consumer-sentiment-data-collection/
 ├── FILE_ORGANIZATION.md
 ├── PROJECT_STRUCTURE.md
 ├── README.md
-├── requirements.txt
-└── topic_results.csv
+├── RESULTS_GUIDE.md
+└── requirements.txt
 ```
 
-**8 root files (down from 14+) ✅**
+Only essential configuration and documentation remain at root.
 
 ---
 
 ## 📍 Where Everything Is
 
-| Item | Location |
-|------|----------|
-| **Results File** | `data/processed/sentiment_analysis_results.csv` |
-| **Analysis Scripts** | `sentiment_analysis/` |
-| **Main Docs** | Root (README.md, RESULTS_GUIDE.md) |
-| **Configuration** | Root (.env, requirements.txt) |
-| **Data** | `data/` folders |
+| Item                     | Location                                        |
+| ------------------------ | ----------------------------------------------- |
+| Sentiment results        | `data/processed/sentiment_analysis_results.csv` |
+| Topic extraction results | `data/processed/topic_results.csv`              |
+| Sentiment scripts        | `sentiment_analysis/`                           |
+| Data collection scripts  | `data_collection/`                              |
+| Cleaning scripts         | `data_preprocessing/`                           |
+| Topic modeling scripts   | `topic_modeling/`                               |
+| API keys                 | `.env` (root)                                   |
 
 ---
 
 ## 🚀 Quick Start
 
-### View Results
+### ▶ View Summary
+
 ```bash
 cd sentiment_analysis
 python show_results_summary.py
 ```
 
-### Run Analysis
+### ▶ Run Sentiment Analysis
+
 ```bash
 cd sentiment_analysis
-python sentiment_analysis.py
+python sentiment_analysis_batch.py
 ```
 
-### Test API
+### ▶ Test Groq API
+
 ```bash
 cd sentiment_analysis
 python test_groq_connection.py
@@ -114,39 +119,54 @@ python test_groq_connection.py
 
 ---
 
-## 📊 Results Summary
-
-**Location:** `data/processed/sentiment_analysis_results.csv`
+## 📊 Results Snapshot
 
 ```
 Total Records: 344
-├─ Positive:  147 (42.73%) ✅
-├─ Negative:   96 (27.91%) ⚠️
-├─ Neutral:   101 (29.36%) ℹ️
-└─ Avg Confidence: 0.74/1.0
+├─ Positive: ~43%
+├─ Negative: ~28%
+├─ Neutral:  ~29%
+└─ Avg Confidence: ~0.74
 ```
+
+Topic modeling results stored separately in `topic_results.csv`.
 
 ---
 
 ## 📚 Documentation Map
 
-| Document | Purpose |
-|----------|---------|
-| **README.md** | Main overview |
-| **RESULTS_GUIDE.md** | Quick start |
-| **PROJECT_STRUCTURE.md** | Technical details |
-| **FILE_ORGANIZATION.md** | This - folder structure |
-| **sentiment_analysis/README.md** | Analysis guide |
+| File                         | Purpose              |
+| ---------------------------- | -------------------- |
+| README.md                    | Project overview     |
+| RESULTS_GUIDE.md             | How to view outputs  |
+| PROJECT_STRUCTURE.md         | Pipeline explanation |
+| FILE_ORGANIZATION.md         | Folder map           |
+| sentiment_analysis/README.md | Script usage         |
 
 ---
 
-## ✅ Organization Complete
+## ✅ Status
 
-- [x] Removed 6 duplicate files
-- [x] Root directory cleaned (8 essential files only)
-- [x] All scripts in `sentiment_analysis/` folder
-- [x] Results in `data/processed/` folder
-- [x] Documentation organized
-- [x] Professional structure ready
+✔ Clean folder structure
+✔ LLM-based sentiment analysis implemented
+✔ Batch processing enabled
+✔ Topic extraction via LLM
+✔ Validation and insights completed
+✔ Mentor‑ready repository
 
-**Status: FULLY ORGANIZED ✅**
+---
+
+If new datasets or domains are added later, they should be placed under:
+
+```
+data/raw/
+data/processed/
+```
+
+and new analysis modules under:
+
+```
+<new_module_name>/
+```
+
+This ensures the pipeline remains scalable and easy to extend.

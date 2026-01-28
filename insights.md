@@ -1,19 +1,31 @@
-# Market Insights from Sentiment Analysis
+📘 Market Insights from Book Consumer Sentiment Analysis
 
-This document presents key market insights derived from the analysis of sentiment_results.csv generated during Milestone 2 of the project. The objective of this analysis is to identify major consumer complaints, positive trends, and potential sentiment misclassifications to support business-level decision making.
+This document presents key insights derived from sentiment analysis performed on book-related consumer comments collected from online platforms during Milestone 2. The objective is to understand reader preferences, common complaints, and overall market trends in the book domain.
 
-## Top Consumer Complaints
+📉 Top Consumer Complaints
 
-Analysis of negatively labeled records reveals that the most frequent consumer complaints are related to battery performance, product durability, and delivery experience. Several users expressed dissatisfaction with battery life degrading faster than expected, especially in mid-range devices. Delivery-related complaints mainly involved delayed shipments and damaged packaging. Pricing was another recurring concern, where users felt that certain products did not justify their cost relative to features offered.
+Negative sentiment analysis indicates that the most frequent complaints are related to:
+Book recommendations not matching expectations, where readers felt the content was boring or not useful.
+Print and physical quality issues, including complaints about page quality and binding.
+Mismatch between hype and actual content, especially for popular self-help and trending books.
+Some users also expressed dissatisfaction with repetitive content in motivational books and lack of originality in certain authors’ writing styles.
 
-## Positive Market Trends
+📈 Positive Market Trends
 
-Positive sentiment records indicate strong appreciation for product performance, value for money, and overall user experience. Many consumers highlighted smooth performance, fast processing speeds, and good build quality. Another notable trend is positive feedback regarding quick delivery and easy setup, suggesting that logistics and onboarding processes are generally well received. These trends indicate that performance optimization and competitive pricing are key drivers of customer satisfaction.
+Positive sentiment records highlight strong appreciation for:
+Inspirational and self-development books, such as productivity and habit-building topics.
+Classic literature and mythology-based books, including references to traditional epics and well-known stories.
+Engaging storytelling and emotional connection, where readers felt personally motivated or entertained.
+These trends suggest strong interest in meaningful content that either improves personal growth or provides deep storytelling experiences.
 
-## Observed Misclassifications
+⚠️ Observed Misclassifications
 
-During manual inspection, a small number of sentiment misclassifications were observed. In some cases, mildly negative feedback with positive phrasing was classified as positive sentiment. Similarly, a few sarcastic or context-dependent comments were labeled as neutral despite expressing dissatisfaction. These misclassifications are expected limitations of automated sentiment models and can be reduced in future iterations through domain-specific fine-tuning or additional contextual training data.
+Manual review revealed that:
+Some sarcastic or mixed-opinion comments were classified as neutral.
+Short or vague comments were sometimes difficult for the model to classify correctly.
+Certain recommendation requests were labeled as neutral even though they reflected positive intent.
+These errors are expected in LLM-based zero-shot sentiment analysis and can be improved using domain-specific fine-tuning or aspect-based sentiment modeling.
 
-## Conclusion
+✅ Conclusion
 
-Overall, the sentiment analysis provides meaningful insights into consumer perception and market behavior. While the model captures major trends effectively, addressing minor misclassifications and refining aspect-based sentiment handling can further improve accuracy. The insights generated are suitable for guiding product improvements and strategic decisions.
+The sentiment analysis provides useful insights into reader behavior and preferences in the book market. While the model effectively captures major sentiment trends, future improvements can include better topic segmentation, genre-wise sentiment comparison, and deeper author-level analysis to strengthen market intelligence outcomes.
