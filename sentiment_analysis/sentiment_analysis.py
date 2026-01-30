@@ -35,7 +35,7 @@ def analyze_sentiment(text, retry_count=0, max_retries=5):
                     "content": f"""Respond with ONLY valid JSON (no markdown, no code blocks):
 {{"sentiment": "positive|negative|neutral", "confidence": 0.0-1.0}}
 
-Text: {str(text)[:300]}"""
+Text: {str(text)}"""
                 }
             ],
             temperature=0.2,
