@@ -1,13 +1,14 @@
 from googleapiclient.discovery import build
 import pandas as pd
+import time
 
-API_KEY = "AIzaSyCKSzTbjHujlh_wXk8kpy7T_TF_PxiQS-g"
+API_KEY = "AIzaSyCKSzTbjHujlh_wXk8kpy7T_TF_PxiQS-g"  
 
 youtube = build("youtube", "v3", developerKey=API_KEY)
 
 SEARCH_QUERY = "book review"
-MAX_VIDEOS = 5
-COMMENTS_PER_VIDEO = 50
+MAX_VIDEOS = 20              # increased from 5 → 20
+COMMENTS_PER_VIDEO = 100    # per video (YouTube max per page is 100)
 
 comments_data = []
 
@@ -22,8 +23,10 @@ search_response = search_request.execute()
 
 video_ids = [item["id"]["videoId"] for item in search_response["items"]]
 
+print(f"Found {len(video_ids)} videos")
+
 # Fetch comments for each video
-for video_id in video_ids:
+for idx, video_id in enumerate(video_ids, start=1):
     video_response = youtube.videos().list(
         part="snippet",
         id=video_id
@@ -31,28 +34,44 @@ for video_id in video_ids:
 
     video_title = video_response["items"][0]["snippet"]["title"]
 
-    comment_request = youtube.commentThreads().list(
-        part="snippet",
-        videoId=video_id,
-        maxResults=COMMENTS_PER_VIDEO,
-        textFormat="plainText"
-    )
+    print(f"\n[{idx}/{len(video_ids)}] Collecting comments for: {video_title}")
 
-    comment_response = comment_request.execute()
+    next_page_token = None
+    collected = 0
 
-    for item in comment_response["items"]:
-        snippet = item["snippet"]["topLevelComment"]["snippet"]
+    while collected < COMMENTS_PER_VIDEO:
+        comment_request = youtube.commentThreads().list(
+            part="snippet",
+            videoId=video_id,
+            maxResults=min(100, COMMENTS_PER_VIDEO - collected),
+            pageToken=next_page_token,
+            textFormat="plainText"
+        )
 
-        comments_data.append({
-            "video_title": video_title,
-            "comment_text": snippet["textDisplay"],
-            "author": snippet["authorDisplayName"],
-            "like_count": snippet["likeCount"],
-            "published_at": snippet["publishedAt"],
-            "source": "youtube"
-        })
+        comment_response = comment_request.execute()
+
+        for item in comment_response.get("items", []):
+            snippet = item["snippet"]["topLevelComment"]["snippet"]
+
+            comments_data.append({
+                "video_title": video_title,
+                "comment_text": snippet.get("textDisplay", ""),
+                "author": snippet.get("authorDisplayName", ""),
+                "like_count": snippet.get("likeCount", 0),
+                "published_at": snippet.get("publishedAt", ""),
+                "source": "youtube"
+            })
+            collected += 1
+
+        next_page_token = comment_response.get("nextPageToken")
+        if not next_page_token:
+            break
+
+        time.sleep(0.2)  # small delay to avoid quota spikes
+
+print(f"\nTotal comments collected: {len(comments_data)}")
 
 df = pd.DataFrame(comments_data)
 df.to_csv("data/raw/youtube_book_comments.csv", index=False)
 
-print(f"Collected {len(df)} YouTube comments")
+print("✅ YouTube comments saved to data/raw/youtube_book_comments.csv")

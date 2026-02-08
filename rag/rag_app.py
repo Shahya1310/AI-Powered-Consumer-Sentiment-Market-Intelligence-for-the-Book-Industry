@@ -21,7 +21,7 @@ if not GROQ_API_KEY:
 
 client = Groq(api_key=GROQ_API_KEY)
 
-DATA_PATH = "data/processed/final_book_feedback.csv"
+DATA_PATH = "sentiment_analysis/book_market_sentiment_topics.csv"
 
 # Global vector DB (loaded once for UI/API)
 _vectordb = None
