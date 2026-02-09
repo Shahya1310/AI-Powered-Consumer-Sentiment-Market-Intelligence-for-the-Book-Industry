@@ -112,19 +112,19 @@ A prototype insights dashboard is built to visualize sentiment and topic trends.
 
 ▫️Top complaints and themes
 
-### 📈Current Project Status
+### 📈 Project Status (Milestones)
 
-✔ Data Collection & Preprocessing
+✅ Milestone 1 (Weeks 1–2): Setup & Data Pipeline
+Data collection from YouTube, news, and e-commerce sources completed. Cleaning, normalization, and unified schema implemented.
 
-✔ Sentiment Analysis & Topic / Aspect Extraction
+✅ Milestone 2 (Weeks 3–4): Sentiment & Topic Models
+LLM-based sentiment, topic, and aspect extraction completed on 2,000+ feedback records. Enriched dataset generated.
 
-✔ RAG Pipeline (LangChain + Vector DB + LLM)
+🟡 Milestone 3 (Weeks 5–6): RAG & Dashboards
+RAG pipeline implemented using LangChain + vector DB. Prototype dashboards built; UI-to-RAG integration in progress.
 
-🟡 Insights Dashboard (Streamlit prototype in progress)
-
-⬜ Production API Deployment (FastAPI)
-
-⬜ Alerting & Monitoring (Future Work)
+⬜ Milestone 4 (Weeks 7–8): Alerts & Deployment
+Planned: alerting, report exports, and cloud deployment.
 
 ### 🚀Future Enhancements
 
