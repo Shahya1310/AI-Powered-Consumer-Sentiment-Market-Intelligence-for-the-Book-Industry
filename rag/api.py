@@ -50,3 +50,8 @@ class QueryResponse(BaseModel):
 def ask(req: QueryRequest):
     answer = answer_query(req.question)
     return {"answer": answer}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("rag.api:app", host="0.0.0.0", port=8000)
+
