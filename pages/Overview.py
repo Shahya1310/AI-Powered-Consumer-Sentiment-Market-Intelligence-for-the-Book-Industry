@@ -141,8 +141,8 @@ st.plotly_chart(fig_cat, use_container_width=True)
 # Floating AI Chat
 # -----------------------------
 
-try:
-    rag_panel()
-except Exception as e:
-    st.error(f"Chat failed: {e}")
+# try:
+#     rag_panel()
+# except Exception as e:
+#     st.error(f"Chat failed: {e}")
 

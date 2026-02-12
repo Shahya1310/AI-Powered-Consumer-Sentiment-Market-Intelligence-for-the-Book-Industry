@@ -123,8 +123,8 @@ if len(numeric_cols) > 1:
 st.divider()
 
 # ---------------- RAG CHAT ----------------
-try:
-    rag_panel()
-except Exception as e:
-    st.error(f"Chat failed: {e}")
+# try:
+#     rag_panel()
+# except Exception as e:
+#     st.error(f"Chat failed: {e}")
 
