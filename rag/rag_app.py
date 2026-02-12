@@ -14,15 +14,23 @@ from groq import Groq
 # -----------------------
 
 load_dotenv()
-GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", None)
+GROQ_API_KEY = None
 
 if not GROQ_API_KEY:
     print("⚠️ WARNING: GROQ_API_KEY not set — app will run but chatbot disabled")
 
 
 def get_groq_client():
+    import streamlit as st
     from groq import Groq
-    return Groq(api_key=GROQ_API_KEY)
+
+    key = st.secrets.get("GROQ_API_KEY", None)
+
+    if not key:
+        raise RuntimeError("GROQ_API_KEY missing in Streamlit secrets")
+
+    return Groq(api_key=key)
+
 
 
 DATA_PATH = "sentiment_analysis/book_market_sentiment_topics.csv"
