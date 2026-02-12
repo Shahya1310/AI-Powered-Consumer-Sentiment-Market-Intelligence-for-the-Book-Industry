@@ -14,10 +14,11 @@ from groq import Groq
 # -----------------------
 
 load_dotenv()
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", None)
 
 if not GROQ_API_KEY:
-    print("⚠️ WARNING: GROQ_API_KEY not set")
+    print("⚠️ WARNING: GROQ_API_KEY not set — app will run but chatbot disabled")
+
 
 def get_groq_client():
     from groq import Groq
