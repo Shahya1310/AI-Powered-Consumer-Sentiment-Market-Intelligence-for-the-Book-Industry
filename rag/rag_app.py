@@ -27,7 +27,7 @@ def get_groq_client():
     key = st.secrets.get("GROQ_API_KEY", None)
 
     if not key:
-        raise RuntimeError("GROQ_API_KEY missing in Streamlit secrets")
+        return None
 
     return Groq(api_key=key)
 
@@ -112,6 +112,11 @@ def classify_query(query: str):
 
 
 def ask_llm(question, context_docs):
+    client = get_groq_client()
+
+    if client is None:
+        return "⚠️ Chatbot disabled: missing API key"
+
     context_blocks = []
 
     for i, doc in enumerate(context_docs, start=1):
@@ -148,7 +153,7 @@ Question:
 Respond concisely in 3–4 bullet points.
 Do NOT invent statistics or new examples.
 """
-    client = get_groq_client()
+    
     response = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         messages=[{"role": "user", "content": prompt}],
