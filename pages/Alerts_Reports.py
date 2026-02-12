@@ -2,34 +2,21 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from pathlib import Path
-from utils.session import init_session
+
+from utils.session import init_session, load_chat
 from theme import dark_theme
 from utils.sidebar import dashboard_sidebar
 from utils.rag_panel import rag_panel
-from utils.session import load_chat
 from utils.email_alert import send_alert
-import smtplib
-from email.mime.text import MIMEText
 
+
+# ---------------- INIT ----------------
 load_chat()
 init_session()
+
 # ---------------- THEME + SIDEBAR ----------------
 dark_theme()
 dashboard_sidebar()
-
-def send_alert_email(message):
-    sender = st.secrets["ALERT_EMAIL"]
-    password = st.secrets["ALERT_PASSWORD"]
-    receiver = st.secrets["TEAM_LEAD_EMAIL"]
-
-    msg = MIMEText(message)
-    msg["Subject"] = "🚨 Sentiment Alert"
-    msg["From"] = sender
-    msg["To"] = receiver
-
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-        server.login(sender, password)
-        server.sendmail(sender, receiver, msg.as_string())
 
 st.markdown("""
 <style>
@@ -81,36 +68,33 @@ total = len(df)
 risk_ratio = negative_count / total if total > 0 else 0
 
 col1, col2 = st.columns(2)
-
 col1.metric("Negative Reviews", negative_count)
 col2.metric("Risk Ratio", f"{risk_ratio:.2%}")
 
 st.divider()
 
-# ---------------- ALERT CARD ----------------
-from utils.email_alert import send_alert
-
+# ---------------- ALERT STATUS ----------------
 if risk_ratio > 0.30:
     st.error("🚨 ALERT: High negative sentiment detected!")
 
-    if st.button("Send Alert Email"):
-        send_alert(f"High negative sentiment detected!\nRisk ratio: {risk_ratio:.2%}")
-        st.success("Alert email sent!")
-
 elif risk_ratio > 0.15:
     st.warning("⚠ Warning: Negative sentiment rising.")
+
 else:
     st.success("✅ Sentiment stable.")
+
+# ---------------- SEND ALERT BUTTON ----------------
 if st.button("📧 Send Alert to Team Lead"):
     message = f"""
-Alert triggered!
+🚨 Sentiment Alert Triggered
 
 Negative reviews: {negative_count}
 Risk ratio: {risk_ratio:.2%}
 
-Check dashboard immediately.
+Dashboard detected elevated risk.
+Immediate review recommended.
 """
-    send_alert_email(message)
+    send_alert(message)
     st.success("✅ Alert email sent!")
 
 st.divider()
@@ -177,4 +161,3 @@ st.divider()
 #     rag_panel()
 # except Exception as e:
 #     st.error(f"Chat failed: {e}")
-
