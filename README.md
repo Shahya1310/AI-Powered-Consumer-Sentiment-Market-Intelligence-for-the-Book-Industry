@@ -114,30 +114,24 @@ A prototype insights dashboard is built to visualize sentiment and topic trends.
 
 ### 📈 Project Status (Milestones)
 
-✅ Milestone 1 (Weeks 1–2): Setup & Data Pipeline
+- **✅ Milestone 1 (Weeks 1–2): Setup & Data Pipeline**  
+  Built a multi-source data ingestion pipeline collecting consumer feedback from YouTube, news, and e-commerce platforms. Implemented data cleaning to remove duplicates, noise, and inconsistencies, creating a unified dataset for analysis.
 
-Data collection from YouTube, news, and e-commerce sources completed. Cleaning, normalization, and unified schema implemented.
+- **✅ Milestone 2 (Weeks 3–4): Sentiment & Topic Models**  
+  Applied LLM-based analysis to extract sentiment, topics, and aspects from 2,000+ feedback records. Transformed unstructured data into structured market intelligence insights.
 
-✅ Milestone 2 (Weeks 3–4): Sentiment & Topic Models
+- **✅ Milestone 3 (Weeks 5–6): RAG & Dashboards**  
+  Developed a Retrieval-Augmented Generation (RAG) pipeline using LangChain and a vector database to enable natural language querying. Built interactive dashboards to visualize sentiment distribution, topic trends, and key user complaints.
 
-LLM-based sentiment, topic, and aspect extraction completed on 2,000+ feedback records. Enriched dataset generated.
+- **✅ Milestone 4 (Weeks 7–8): Alerts & Deployment**  
+  Completed end-to-end system integration and deployed the solution. Enabled real-time querying through the UI and demonstrated the system’s ability to convert scattered feedback into actionable business insights.
 
-🟡 Milestone 3 (Weeks 5–6): RAG & Dashboards
+---
 
-RAG pipeline implemented using LangChain + vector DB. Prototype dashboards built; UI-to-RAG integration in progress.
+### 🚀 Future Enhancements
 
-⬜ Milestone 4 (Weeks 7–8): Alerts & Deployment
-
-Planned: alerting, report exports, and cloud deployment.
-
-### 🚀Future Enhancements
-
-💠Brand-specific platform analysis (e.g., Amazon, Kindle, Goodreads)
-
-💠Real-time data ingestion & streaming updates
-
-💠Automated alerts for emerging negative trends
-
-💠Deployment on cloud infrastructure
-
-💠Switching vector backend to Pinecone for large-scale production use
+- 🔹 Brand-specific analysis (Amazon, Kindle, Apple Books, etc.)  
+- 🔹 Real-time data ingestion and streaming pipelines  
+- 🔹 Automated alerts for emerging negative trends  
+- 🔹 Scalable cloud deployment (Docker, Kubernetes, Azure)  
+- 🔹 Advanced RAG tuning for improved retrieval accuracy
